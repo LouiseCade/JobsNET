@@ -1,0 +1,60 @@
+body{
+	background: #FFFFFF;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+h1 img{
+    padding: 20px; 
+    display: inline-block;
+    max-width:160px;
+    width: auto;
+    height: auto;
+    
+}
+.navbar div {
+    float:left;
+    display:inline;
+    padding: 20px; 
+    }
+
+#capa{
+    
+    height: auto;
+	width:100%;
+    padding: 0px 0px 50px 0px;
+    }
+
+#encontre div {
+        display: inline-block;
+        position: relative;
+      }
+      
+#encontre figcaption {
+        position: absolute;
+        top: 300px;
+        right: 120px;
+        font-size: 40px;
+        color: black;
+}
+.busca {
+    position: absolute;
+        top: 380px;
+        right: 350px;
+        font-size: 30px;
+
+}
+
+
+
+
+    
+
+#rodape{
+    font-size: smaller;
+    
+    background-color: lightgray;
+}
+#redesocial1, #redesocial2{
+    width:40;
+    height:40
+    }

@@ -1,21 +1,36 @@
 body{
 	background: #FFFFFF;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 
+
+header{
+    padding: 0 25px ;
+}
 h1 img{
     padding: 20px; 
     display: inline-block;
     max-width:160px;
     width: auto;
-    height: auto;
-    
+    height: auto;   
 }
-.navbar div {
-    float:left;
-    display:inline;
+
+a{
+    color: #004aad;}
+
+ nav{
+    text-align: right;
+    top: 70px;
+    right: 0;
+    position: absolute;
+ }
+nav ul li{
     padding: 20px; 
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline;
     }
+
 
 #capa{
     
@@ -24,23 +39,31 @@ h1 img{
     padding: 0px 0px 50px 0px;
     }
 
-#encontre div {
+#encontre  {
         display: inline-block;
         position: relative;
+        
       }
       
 #encontre figcaption {
         position: absolute;
-        top: 300px;
-        right: 120px;
+        top: 200px;
+        right: 200px;
         font-size: 40px;
         color: black;
 }
 .busca {
     position: absolute;
-        top: 380px;
-        right: 350px;
-        font-size: 30px;
+    top: 280px;
+    right: 400px;
+    font-size: 28px;
+    width: 500px;
+}
+.btn-busca {
+    position: absolute;
+    top: 285px;
+    right: 270px;
+    font-size: 20px;
 
 }
 

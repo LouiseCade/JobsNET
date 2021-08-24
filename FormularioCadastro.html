@@ -30,7 +30,7 @@
                         <a class="nav-link" aria-current="page" href="Home JobsNet.html"> Início</a>
                         <a class="nav-link" href="#"> Empresas</a>
                         <a class="nav-link active" href="FormularioCadastro.html"> Cadastre-se</a>
-                        <a class="nav-link" href="#"> Login do candidato </a>
+                        <a class="nav-link" href="LoginCandidato.html"> Login do candidato </a>
                     </div>
                 </div>
             </div>
@@ -38,29 +38,38 @@
     </header>
     <div>
     <h2 class="Cadastro"> Cadastro do candidato </h2>
-    <form class="row g-3">
+    <form class="row g-3 formu">
         <div>
             <div class="col">
                 <label for="inputName" class="form-label">Como você se chama?</label>
-                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="name">
+                <input type="text" required="" class="form-control" placeholder="Nome Completo" aria-label="name">
             </div>
             
         </div>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Qual o seu email?</label>
-            <input type="email" class="form-control" id="inputEmail4"placeholder="usuario@email.com">
+            <input type="email" required="" class="form-control" id="inputEmail4"placeholder="usuario@email.com">
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Escolha sua senha:</label>
-            <input type="password" class="form-control" id="inputPassword4">
+            <input type="password" required="" class="form-control" id="inputPassword4" placeholder="****">
         </div>
         <div class="col-md-4">
-            <label for="inputCPF" class="form-label">Qual o seu CPF?</label>
-            <input type="cpf" class="form-control" id="inputCPF" placeholder="000.000.000-00">
+            <label for="cpf_digitado" maxlength="11" class="form-label">Qual o seu CPF?</label>
+            <input type="cpf" required="" class="form-control" id="cpf_digitado" placeholder="XXX.XXX.XXX-XX">
+            <small class="form-text text-muted">Digite somente numeros</small>
+            <div class="container page-header">
+                <div id="success" class="alert alert-success" style="display: none;" role="alert">
+                    Seu CPF é válido
+                </div>
+                <div id="error" class="alert alert-danger" style="display: none;" >
+                    <strong>Ops!</strong> Seu CPF não é válido
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
             <label for="diaa"  class="form-label">Qual a sua data de nascimento?</label>
-            <input type="date" class="form-control" id="diaa" name="diaa">
+            <input type="date" required="" class="form-control" id="diaa" name="diaa">
         </div>
         <div class="col-md-4">
             <label for="inputCivil" class="form-label">Qual o seu estado civil?</label>
@@ -75,20 +84,20 @@
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Qual o seu endereço?</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Rua">
+            <input type="text" required="" class="form-control" id="inputAddress" placeholder="Rua">
         </div>
         <div class="col-12">
             <label for="inputAddress2" class="form-label">Complemento:</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento nº">
+            <input type="text" required="" class="form-control" id="inputAddress2" placeholder="Apartamento nº">
         </div>
     
         <div class="col-md-6">
             <label for="inputCity" class="form-label">Cidade:</label>
-            <input type="text" class="form-control" id="inputCity">
+            <input type="text" required="" class="form-control" id="inputCity">
         </div>
         <div class="col-md-4">
             <label for="inputState" class="form-label">Estado:</label>
-            <select id="inputState" class="form-select">
+            <select id="inputState" required="" class="form-select">
                 <option selected>Selecione...</option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
@@ -121,15 +130,15 @@
         </div>
         <div class="col-md-2">
             <label for="inputZip" class="form-label">CEP:</label>
-            <input type="text" class="form-control" id="inputZip">
+            <input type="number" required="" class="form-control" id="inputZip">
         </div>
         <div class="col-12">
             <label for="inputCargo" class="form-label">Qual profissão/cargo você exerce?</label>
-            <input type="text" class="form-control" id="inputCargo" placeholder="Profissão">
+            <input type="text" required="" class="form-control" id="inputCargo" placeholder="Profissão">
         </div>
         <div class="col-md-6">
             <label for="inputPhone" class="form-label">Qual o seu celular?</label>
-            <input type="phone" class="form-control" id="inputPhone"placeholder="(DDD) 9 9999-9999">
+            <input type="phone" required="" class="form-control" id="inputPhone"placeholder="(DDD) XXXXX-XXXX">
         </div>
         <div class="col-md-6">
             <label for="inputLink" class="form-label">Qual o link do seu perfil no Linkedin?</label>
@@ -145,14 +154,28 @@
             </div>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary" onclick="validacao()">Enviar</button>
         </div>
     </form>
     </div>
 
+    <footer class="rodape">
+        <div class="d-flex justify-content-center">
+            <img id='facebook' src="img-jobs/icons/facebook.png">
+            <img id='instagram' src="img-jobs/icons/instagram.png">
+            <img id='linked' src="img-jobs/icons/linkedin.png">
+            <img id='whatsapp' src="img-jobs/icons/whatsapp.png">
+          </div>
+        
+        <div class="text-center p-3" style="color: aliceblue;">
+          © 2021 Copyright: JobsNET.com.br
+        </div>
+      </footer>
+  
+  
+      </div>
 
-
-
+    <script src="scriptCPF.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>

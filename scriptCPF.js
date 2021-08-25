@@ -39,8 +39,8 @@ function ValidaCPF(cpf) {
 
 function validacao() {
     console.log("Iniciando validação CPF");
-    document.getElementById('success').style.display = 'nome';  //para não ficar a mensagem anterior quando validar novamente um outro numero
-    document.getElementById('error').style.display = 'nome';
+    document.getElementById('success').style.display = 'none';  
+    document.getElementById('error').style.display = 'none';
 
     var cpf = document.getElementById("cpf_digitado").value;
 

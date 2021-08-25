@@ -4,7 +4,6 @@ body{
 }
 
 
-
 #capa{
     height: auto;
 	width:100%;
@@ -45,7 +44,12 @@ body{
     text-align:center;
 }
 h2 {
-    margin: 10px 0 ;
+    margin: 16px 0 ;
+}
+
+.cadastrar{
+    background-color: #b4a6f5
+
 }
 
 .areas{
@@ -56,7 +60,7 @@ h2 {
 
 .rodape {
     margin-top: 50px;
-    padding: 10px;
+    padding: 16px;
     font-size: smaller;
     background-color: rgb(0, 58, 134);
 
@@ -65,7 +69,7 @@ h2 {
 #whatsapp, #instagram, #linked, #facebook{
     width:40;
     height:40;
-    margin: 15px;
+    margin: 16px;
     } 
 
 

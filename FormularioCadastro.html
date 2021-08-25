@@ -52,17 +52,17 @@
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Escolha sua senha:</label>
-            <input type="password" required="" class="form-control" id="inputPassword4" placeholder="****">
+            <input type="password" required="" class="form-control" id="inputPassword4">
         </div>
         <div class="col-md-4">
             <label for="cpf_digitado" maxlength="11" class="form-label">Qual o seu CPF?</label>
             <input type="cpf" required="" class="form-control" id="cpf_digitado" placeholder="XXX.XXX.XXX-XX">
-            <small class="form-text text-muted">Digite somente numeros</small>
+            <small class="form-text text-muted">Digite somente números</small>
             <div class="container page-header">
-                <div id="success" class="alert alert-success" style="display: none;" role="alert">
+                <div id="success" class="alert alert-success" style="display: none; padding: 0;" role="alert">
                     Seu CPF é válido
                 </div>
-                <div id="error" class="alert alert-danger" style="display: none;" >
+                <div id="error" class="alert alert-danger" style="display: none; padding: 0;" role="alert">
                     <strong>Ops!</strong> Seu CPF não é válido
                 </div>
             </div>
@@ -129,8 +129,8 @@
             </select>
         </div>
         <div class="col-md-2">
-            <label for="inputZip" class="form-label">CEP:</label>
-            <input type="number" required="" class="form-control" id="inputZip">
+            <label for="inputCep" class="form-label">CEP:</label>
+            <input type="text" required="" class="form-control" id="inputCep">
         </div>
         <div class="col-12">
             <label for="inputCargo" class="form-label">Qual profissão/cargo você exerce?</label>

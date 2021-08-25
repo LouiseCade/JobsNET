@@ -1,28 +1,27 @@
 body{
-	background: #FFFFFF;
+	background: rgb(0, 58, 134);
     font-family: 'Open Sans', 'sans-serif';
 }
 
-.cadastro{
+.login{
     text-align: center;
     margin-top: 100px;
 }
+
 .row {
-margin:10px;
-padding: 0 100px;
-}
+    margin:10px;
+    padding: 0 100px;
+    }
 
 .rodape {
-    margin-top: 100px;
-    padding: 16px;
+    margin-top: 50px;
+    padding: 10px;
     font-size: smaller;
-    background-color: rgb(0, 58, 134);
-
-       
+    background-color: rgb(0, 58, 134);      
 }
+
 #whatsapp, #instagram, #linked, #facebook{
     width:40;
     height:40;
-    margin: 16px;
+    margin: 15px;
     } 
-

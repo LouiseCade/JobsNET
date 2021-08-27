@@ -48,7 +48,7 @@ function validacao() {
     var resultadoValidacao = ValidaCPF(cpf);
 
     if (resultadoValidacao == true) {
-        document.getElementById("success").style.display = 'block';
+        document.getElementById('success').style.display = 'block';
     }
     else {
         document.getElementById('error').style.display = 'block';

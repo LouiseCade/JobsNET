@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="style form.css"> -->
+   
 
 </head>
 
@@ -47,12 +48,13 @@
             
         </div>
         <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Qual o seu email?</label>
-            <input type="email" required="" class="form-control" id="inputEmail4"placeholder="usuario@email.com">
+            <label for="inputEmail" class="form-label">Qual o seu email?</label>
+            <input type="email" required="" class="form-control" id="inputEmail"placeholder="usuario@email.com">
         </div>
         <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Escolha sua senha:</label>
-            <input type="password" required="" class="form-control" id="inputPassword4">
+            <label for="inputPassword" class="form-label">Escolha sua senha:</label>
+            <input type="password" required="" class="form-control" id="inputPassword" minlength="4" maxlength="8">
+            <small class="form-text text-muted">De 4 a 8 caracteres</small>
         </div>
         <div class="col-md-4">
             <label for="cpf_digitado" maxlength="11" class="form-label">Qual o seu CPF?</label>
@@ -82,22 +84,31 @@
                     <option value="Viuvo">Viúvo(a)</option>
             </select>
         </div>
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">Qual o seu endereço?</label>
-            <input type="text" required="" class="form-control" id="inputAddress" placeholder="Rua">
+        <div class="col-md-4">
+            <label for="cep" class="form-label">Informe o CEP:</label>
+            <input type="text" required="" class="form-control" id="cep" pattern="[\d]{5}-?[\d]{3}" onblur="pesquisarcep(this.value)">
         </div>
-        <div class="col-12">
-            <label for="inputAddress2" class="form-label">Complemento:</label>
-            <input type="text" required="" class="form-control" id="inputAddress2" placeholder="Apartamento nº">
+        <div class="col-4">
+            <label for="endereco" class="form-label">Qual o seu endereço?</label>
+            <input type="text" required="" class="form-control" id="endereco" placeholder="Rua">
+        </div>
+        <div class="col-4">
+            <label for="bairro" class="form-label">Bairro:</label>
+            <input type="text" required="" class="form-control" id="bairro" placeholder="Bairro">
+        </div>
+
+        <div class="col-4">
+            <label for="complemento" class="form-label">Complemento:</label>
+            <input type="text" required="" class="form-control" id="complemento" placeholder=" nº apto ">
         </div>
     
-        <div class="col-md-6">
-            <label for="inputCity" class="form-label">Cidade:</label>
-            <input type="text" required="" class="form-control" id="inputCity">
+        <div class="col-md-4">
+            <label for="cidade" class="form-label">Cidade:</label>
+            <input type="text" required="" class="form-control" id="cidade">
         </div>
         <div class="col-md-4">
-            <label for="inputState" class="form-label">Estado:</label>
-            <select id="inputState" required="" class="form-select">
+            <label for="estado" class="form-label">Estado:</label>
+            <select id="estado" required="" class="form-select">
                 <option selected>Selecione...</option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
@@ -128,10 +139,7 @@
                     <option value="TO">TO</option>
             </select>
         </div>
-        <div class="col-md-2">
-            <label for="inputCep" class="form-label">CEP:</label>
-            <input type="text" required="" class="form-control" id="inputCep">
-        </div>
+        
         <div class="col-12">
             <label for="inputCargo" class="form-label">Qual profissão/cargo você exerce?</label>
             <input type="text" required="" class="form-control" id="inputCargo" placeholder="Profissão">
@@ -154,7 +162,7 @@
             </div>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary" onclick="validacao()">Enviar</button>
+            <a href="CadastroSucesso.html"> <button type="submit" class="btn btn-primary" onclick="validacao()">Enviar</button></a>
         </div>
     </form>
     </div>
@@ -175,6 +183,8 @@
   
       </div>
 
+
+    <script src="apiCEP.js"type="module"></script>
     <script src="scriptCPF.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"

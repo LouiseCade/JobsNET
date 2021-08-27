@@ -1,43 +1,53 @@
-'use strict';
 
-const limparFormulario = (endereco) =>{
-    document.getElementById('endereco').value = '';
-    document.getElementById('bairro').value = '';
-    document.getElementById('cidade').value = '';
-    document.getElementById('estado').value = '';
+const limpa_formulário_cep = () => {
+    document.getElementById('endereco').value = ("");
+    document.getElementById('bairro').value = ("");
+    document.getElementById('cidade').value = ("");
+    document.getElementById('estado').value = ("");
+
 }
+const preencherFormulario = (conteudo) => {
+    if (!("erro" in conteudo)) {
+        document.getElementById('endereco').value = (conteudo.logradouro);
+        document.getElementById('bairro').value = (conteudo.bairro);
+        document.getElementById('cidade').value = (conteudo.localidade);
+        document.getElementById('estado').value = (conteudo.uf);
 
-
-const preencherFormulario = (endereco) =>{
-    document.getElementById('endereco').value = endereco.logradouro;
-    document.getElementById('bairro').value = endereco.bairro;
-    document.getElementById('cidade').value = endereco.localidade;
-    document.getElementById('estado').value = endereco.uf;
+    }
+    else {
+        limpa_formulário_cep();
+        alert("CEP não encontrado.");
+    }
 }
-
 
 const eNumero = (numero) => /^[0-9]+$/.test(numero);
-
 const cepValido = (cep) => cep.length == 8 && eNumero(cep); 
 
 const pesquisarCep = async() => {
-    limparFormulario();
+    limpa_formulário_cep();
     
     const cep = document.getElementById('cep').value;
-    const url = `viacep.com.br/ws/${cep}/json/`;
-    if (cepValido(cep)){
-        const dados = await fetch(url);
-        const endereco = await dados.json();
-        if (endereco.hasOwnProperty('erro')){
-            document.getElementById('endereco').value = 'CEP não encontrado!';
-        }else {
-            preencherFormulario(endereco);
+    const url = 'https://viacep.com.br/ws/' + cep + '/json';
+    
+        if (cepValido(cep)){
+            const dados = await fetch(url);
+            const conteudo = await dados.json();
+            if (conteudo.hasOwnProperty('erro')){
+                document.getElementById('endereco').value = 'CEP não encontrado!';
+            }
+            else {
+                preencherFormulario(conteudo);
         }
-    }else{
+    }
+    else {
         document.getElementById('endereco').value = 'CEP incorreto!';
     }
-     
 }
 
+
 document.getElementById('cep')
-        .addEventListener('focusout',pesquisarCep);
+    .addEventListener('focusout',pesquisarCep);
+
+
+
+

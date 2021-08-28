@@ -1,0 +1,101 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "API do JobsNET",
+      "description": "essa é a api do projeto JobsNET",
+      "version": "0.0.1"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000",
+        "description": "ambiente de desenvolvimento"
+      }
+    ],
+    "paths": {
+      "/register": {
+        "post": {
+          "summary": "Cadastro de candidato",
+          "description": "Rota de cadastro de usuário",
+          "tags": [
+            "candidato"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "nome": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "senha": {
+                      "type": "string"
+                    },
+                    "cpf": {
+                      "type": "string"
+                    },
+                    "dataNascimento": {
+                      "type": "string"
+                    },
+                    "estadoCivil": {
+                      "type": "string"
+                    },
+                    "cep": {
+                      "type": "string"
+                    },
+                    "endereco": {
+                      "type": "string"
+                    },
+                    "bairro": {
+                      "type": "string"
+                    },
+                    "complemento": {
+                      "type": "string"
+                    },
+                    "cidade": {
+                      "type": "string"
+                    },
+                    "estado": {
+                      "type": "string"
+                    },
+                    "profissao": {
+                      "type": "string"
+                    },
+                    "celular": {
+                      "type": "string"
+                    },
+                    "linkedin": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "eu": {
+                    "value": {
+                      "nome": "Louise Cade",
+                      "email": "louise.cade@email.com",
+                      "senha": "1234",
+                      "cpf": "12345678908",
+                      "dataNascimento": "18021998",
+                      "estadoCivil": "Solteiro(a)",
+                      "cep": "01001000",
+                      "endereco": "Praça da Sé",
+                      "bairro": "Sé",
+                      "complemento": "num 8",
+                      "cidade": "São Paulo",
+                      "estado": "SP",
+                      "profissao": "Dev",
+                      "celular": "2799998888",
+                      "linkedin": "llll"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

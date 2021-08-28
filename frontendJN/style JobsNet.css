@@ -1,0 +1,75 @@
+body{
+	background: #FFFFFF;
+    font-family: 'Open Sans', 'sans-serif';
+}
+
+
+#capa{
+    height: auto;
+	width:100%;
+    padding: 0px 0px 50px 0px;
+    }
+
+      
+#encontre figcaption {
+        position: absolute;
+        top: 250px;
+        right: 200px;
+        font-size: 40px;
+        color: black;
+        font-style:oblique
+}
+
+.busca {
+    position: absolute;
+    top: 330px;
+    right: 400px;
+    font-size: 28px;
+    width: 550px;
+    
+}
+.btn-primary {
+    position: absolute;
+    top: 335px;
+    right: 260px;
+    font-size: 22px;
+   
+
+} 
+.navbar-brand{
+    margin-left:20px;
+}
+
+.sobre{
+    text-align:center;
+}
+h2 {
+    margin: 16px 0 ;
+}
+
+.cadastrar{
+    background-color: #b4a6f5
+
+}
+
+.areas{
+    margin: 60px 0;
+    text-align: center;
+}
+ 
+
+.rodape {
+    margin-top: 50px;
+    padding: 16px;
+    font-size: smaller;
+    background-color: rgb(0, 58, 134);
+
+       
+}
+#whatsapp, #instagram, #linked, #facebook{
+    width:40;
+    height:40;
+    margin: 16px;
+    } 
+
+

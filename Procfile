@@ -1,1 +1,1 @@
-web: node Gama/backendJN/index.js
+web: node index.js

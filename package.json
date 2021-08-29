@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon Gama/backendJN/index.js"
+    "dev": "nodemon Gama/backendJN/index.js",
+    "start" : "Gama/backendJN/index.js"
   },
   "author": "Louise Cade",
   "license": "ISC",

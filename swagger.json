@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "https://back-gama.herokuapp.com/docs/",
+        "url": "https://back-gama.herokuapp.com/",
         "description": "ambiente de desenvolvimento"
       }
     ],

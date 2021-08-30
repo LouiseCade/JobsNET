@@ -16,13 +16,16 @@ padding: 0 100px;
     margin-top: 100px;
     padding: 16px;
     font-size: smaller;
-    background-color: rgb(0, 58, 134);
-
-       
+    background-color: rgb(0, 58, 134);  
 }
+
 #whatsapp, #instagram, #linked, #facebook{
     width:40;
     height:40;
     margin: 16px;
     } 
 
+.validar-cpf{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}

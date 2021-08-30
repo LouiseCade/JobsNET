@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="style form.css"> -->
-   
+
 
 </head>
 
@@ -38,78 +38,83 @@
         </nav>
     </header>
     <div>
-    <h2 class="Cadastro"> Cadastro do candidato </h2>
-    <form class="row g-3 formu" onchange="Formulario()">
-        <div>
-            <div class="col">
-                <label for="nome" class="form-label">Como você se chama?</label>
-                <input type="text" required="" id="nome" class="form-control" placeholder="Nome Completo" aria-label="nome">
-            </div>
-            
-        </div>
-        <div class="col-md-6">
-            <label for="email" class="form-label">Qual o seu email?</label>
-            <input type="email" required="" class="form-control" id="Email"placeholder="usuario@email.com">
-        </div>
-        <div class="col-md-6">
-            <label for="senha" class="form-label">Escolha sua senha:</label>
-            <input type="password" required="" class="form-control" id="senha" minlength="4" maxlength="8">
-            <small class="form-text text-muted">De 4 a 8 caracteres</small>
-        </div>
-        <div class="col-md-4">
-            <label for="cpf_digitado" maxlength="11" class="form-label">Qual o seu CPF?</label>
-            <input type="cpf" required="" class="form-control" id="cpf_digitado" placeholder="XXX.XXX.XXX-XX">
-            <small class="form-text text-muted">Digite somente números</small>
-            <div class="container page-header">
-                <div id="success" class="alert alert-success" style="display: none; padding: 0;" role="alert">
-                    Seu CPF é válido
+        <h2 class="Cadastro"> Cadastro do candidato </h2>
+        <form class="row g-3 formu">
+            <div>
+                <div class="col">
+                    <label for="nome" class="form-label">Como você se chama?</label>
+                    <input type="text" required="" id="nome" class="form-control" placeholder="Nome Completo"
+                        aria-label="nome" onchange="Formulario()">
                 </div>
-                <div id="error" class="alert alert-danger" style="display: none; padding: 0;" role="alert">
-                    <strong>Ops!</strong> Seu CPF não é válido
+
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Qual o seu email?</label>
+                <input type="email" required="" class="form-control" id="email" placeholder="usuario@email.com">
+            </div>
+            <div class="col-md-6">
+                <label for="senha" class="form-label">Escolha sua senha:</label>
+                <input type="password" required="" class="form-control" id="senha" minlength="4" maxlength="8"
+                    onchange="Formulario()">
+                <small class="form-text text-muted">De 4 a 8 caracteres</small>
+            </div>
+            <div class="col-md-4">
+                <label for="cpf" class="form-label">Qual o seu CPF?</label>
+                <input type="cpf" required="" class="form-control" maxlength="11" id="cpf" onchange="validacao()">
+                <small class="form-text text-muted">Digite somente números</small>
+                <div class="container page-header validar-cpf">
+                    <div id="success" class="alert alert-success" style="display: none; padding: 0;" role="alert">
+                        Seu CPF é válido
+                    </div>
+                    <div id="error" class="alert alert-danger" style="display: none; padding: 0;" role="alert">
+                        <strong>Ops!</strong> Seu CPF não é válido
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <label for="dataNascimento"  class="form-label">Qual a sua data de nascimento?</label>
-            <input type="date" required="" class="form-control" id="dataNascimento" name="diaa">
-        </div>
-        <div class="col-md-4">
-            <label for="estadoCivil" class="form-label">Qual o seu estado civil?</label>
-            <select id="estadoCivil" class="form-select">
-            <option selected>Selecione...</option>
-            <option value="Solteiro">Solteiro(a)</option>
+            <div class="col-md-4">
+                <label for="dataNascimento" class="form-label">Qual a sua data de nascimento?</label>
+                <input type="date" required="" class="form-control" id="dataNascimento" onchange="Formulario()">
+            </div>
+            <div class="col-md-4">
+                <label for="estadoCivil" class="form-label">Qual o seu estado civil?</label>
+                <select id="estadoCivil" class="form-select" onchange="Formulario()">
+                    <option selected>Selecione...</option>
+                    <option value="Solteiro">Solteiro(a)</option>
                     <option value="Casado">Casado(a)</option>
                     <option value="Separado">Separado(a)</option>
                     <option value="Divorciado">Divorciado(a)</option>
                     <option value="Viuvo">Viúvo(a)</option>
-            </select>
-        </div>
-        <div class="col-md-4">
-            <label for="cep" class="form-label">Informe o CEP:</label>
-            <input type="text" required="" class="form-control" id="cep" pattern="[\d]{5}-?[\d]{3}">
-        </div>
-        <div class="col-4">
-            <label for="endereco" class="form-label">Qual o seu endereço?</label>
-            <input type="text" required="" class="form-control" id="endereco" placeholder="Rua">
-        </div>
-        <div class="col-4">
-            <label for="bairro" class="form-label">Bairro:</label>
-            <input type="text" required="" class="form-control" id="bairro" placeholder="Bairro">
-        </div>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="cep" class="form-label">Informe o CEP:</label>
+                <input type="text" required="" class="form-control" id="cep" maxlength="10" onchange="buscaCep()">
+            </div>
+            <div class="col-4">
+                <label for="endereco" class="form-label">Qual o seu endereço?</label>
+                <input type="text" required="" class="form-control" id="endereco" placeholder="Rua"
+                    onchange="Formulario()">
+            </div>
+            <div class="col-4">
+                <label for="bairro" class="form-label">Bairro:</label>
+                <input type="text" required="" class="form-control" id="bairro" placeholder="Bairro"
+                    onchange="Formulario()">
+            </div>
 
-        <div class="col-4">
-            <label for="complemento" class="form-label">Complemento:</label>
-            <input type="text" required="" class="form-control" id="complemento" placeholder=" nº apto ">
-        </div>
-    
-        <div class="col-md-4">
-            <label for="cidade" class="form-label">Cidade:</label>
-            <input type="text" required="" class="form-control" id="cidade">
-        </div>
-        <div class="col-md-4">
-            <label for="estado" class="form-label">Estado:</label>
-            <select id="estado" required="" class="form-select">
-                <option selected>Selecione...</option>
+            <div class="col-4">
+                <label for="complemento" class="form-label">Complemento:</label>
+                <input type="text" required="" class="form-control" id="complemento" placeholder=" nº apto "
+                    onchange="Formulario()">
+            </div>
+
+            <div class="col-md-4">
+                <label for="cidade" class="form-label">Cidade:</label>
+                <input type="text" required="" class="form-control" id="cidade" onchange="Formulario()">
+            </div>
+            <div class="col-md-4">
+                <label for="estado" class="form-label">Estado:</label>
+                <select id="estado" required="" class="form-select" onchange="Formulario()">
+                    <option selected>Selecione...</option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
                     <option value="AP">AP</option>
@@ -137,34 +142,36 @@
                     <option value="SP">SP</option>
                     <option value="SE">SE</option>
                     <option value="TO">TO</option>
-            </select>
-        </div>
-        
-        <div class="col-12">
-            <label for="cargo" class="form-label">Qual profissão/cargo você exerce?</label>
-            <input type="text" required="" class="form-control" id="cargo" placeholder="Profissão">
-        </div>
-        <div class="col-md-6">
-            <label for="celular" class="form-label">Qual o seu celular?</label>
-            <input type="phone" required="" maxlength="11" class="form-control" id="celular" placeholder="(DDD) XXXXX-XXXX">
-        </div>
-        <div class="col-md-6">
-            <label for="inputLink" class="form-label">Qual o link do seu perfil no Linkedin?</label>
-            <input type="link" class="form-control" id="link">
-        </div>
-
-        <div class="col-12">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Concordo com os termos e condições 
-                </label>
+                </select>
             </div>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary" onclick="validacao()">Enviar</button>   
-        </div>
-    </form>
+
+            <div class="col-12">
+                <label for="cargo" class="form-label">Qual profissão/cargo você exerce?</label>
+                <input type="text" required="" class="form-control" id="cargo" placeholder="Profissão"
+                    onchange="Formulario()">
+            </div>
+            <div class="col-md-6">
+                <label for="celular" class="form-label">Qual o seu celular?</label>
+                <input type="phone" required="" maxlength="11" class="form-control" id="celular"
+                    placeholder="(DDD) XXXXX-XXXX" onchange="Formulario()">
+            </div>
+            <div class="col-md-6">
+                <label for="inputLink" class="form-label">Qual o link do seu perfil no Linkedin?</label>
+                <input type="link" class="form-control" id="linkedin" onchange="Formulario()">
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Concordo com os termos e condições
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary" onclick="check_form()">Enviar</button>
+            </div>
+        </form>
     </div>
 
     <footer class="rodape">
@@ -173,24 +180,20 @@
             <img id='instagram' src="img-jobs/icons/instagram.png">
             <img id='linked' src="img-jobs/icons/linkedin.png">
             <img id='whatsapp' src="img-jobs/icons/whatsapp.png">
-          </div>
-        
+        </div>
+
         <div class="text-center p-3" style="color: aliceblue;">
             © 2021 Desenvolvido por Louise Cade no programa Start Tech da Gama Academy
         </div>
-      </footer>
-  
-  
-      </div>
+    </footer>
 
+    </div>
 
-    <!-- <script src="apiCEP.js"type="module"></script>  -->
-    <script src="scriptCPF.js"></script>
     <script src="scriptForm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 
 </body>
-</html>
 
+</html>

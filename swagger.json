@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "http://localhost:5000",
+        "url": "https://back-gama.herokuapp.com/docs/",
         "description": "ambiente de desenvolvimento"
       }
     ],
